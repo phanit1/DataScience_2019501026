@@ -1,0 +1,5 @@
+examsdata <- read.csv("spring2008exams.csv")
+model <- lm(examsdata$Midterm.2 ~ examsdata$Midterm.1)
+plot(examsdata$Midterm.1, examsdata$Midterm.2, pch=19,xlab="Exam 1", ylab="Exam2",xlim=c(10,100),ylim=c(10,100))
+abline(model)
+sort(model$residuals)
